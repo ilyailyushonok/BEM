@@ -1,0 +1,123 @@
+/* ссылка на видеоурок 1 часть https://www.youtube.com/watch?v=3sGZvLMrKrU */
+/* ссылка на видеоурок 2 часть https://www.youtube.com/watch?v=btJVoCZyjbA */
+body{
+    background: rgba(235, 152, 238, 0.42);
+}
+/* Button */
+.btn{
+    background: #1ec926;
+    color:white;
+    border-radius: 10px;
+    padding: 13px 20px;
+    border:none;
+    outline: none;
+    transition:bacground-color .9s ;
+}
+.btn:hover{
+    background: #2d206f;
+}
+.btn:active{                /* хз для чего */
+    background: #940909;
+}
+.btn:focus{
+    background: #962088;
+    outline: 1px solid #07452f;
+    outline-offset: 2px;
+}
+/* модификатор желтого цвета кнопки */
+    .btn_yellow{
+        background: #FFB800;
+    }
+
+
+/* reinting */
+.rating{
+    display: flex;
+}
+.rating__star:not(:last-child){
+    margin-right: 6px;
+   
+}
+.rating__star{
+    width: 15px;
+    
+}
+.rating__star_size{  /* --модификатор размера звездочки */
+transform:scale(1.5) ;
+ }
+
+/* card */
+.card{
+/* width:374px;
+min-height: 440px; */ /*применяли для еденичной карточки, в грид это лишнее*/
+border-radius: 15px;
+overflow: hidden;
+background: #fdfdfd;
+
+}
+.card__img{
+    display: block;
+width:100%;
+height: 217px;
+object-fit:cover;
+
+}
+.card__body{
+    padding: 43px 36px;
+
+}
+.card__price-rating{
+    display: flex;
+justify-content: space-between;
+    margin-bottom: 20px;
+}
+.card__price{
+    font-size: 20px;
+    font-weight: 700;
+}
+.card__rating{
+    margin-left: 30px;
+}
+.card__title{
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: normal;
+
+}
+.card__location{
+    display: block;
+    font-size: 16px;
+    margin-bottom: 18px;
+    color: #999;
+}
+/*карточка с акцией для grid , модификатор акции*/
+.card_promo{ 
+position: relative;  
+outline:5px solid #FFB800;
+}
+.card_promo::before {
+content:"АКЦИЯ";
+display: block;
+position: absolute;
+left:50%;
+top:0;
+transform: translateX(-50%);
+background-color: #FFB800;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+color: white;
+font-weight: 700;
+padding:10px 30px;
+
+}
+/* класс card_btn тут пока не использовался */
+/* Блок-сетка с 6 карточками отелей */
+.cards-list{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    gap:30px; /* отступы между элементами grid*/
+    list-style-type: none; /*отключить базовую стилизацию ul*/
+    padding: 0;
+    margin: 0;
+}
